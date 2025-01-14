@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete JavaScript Essentials for React</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 font-poppins transition-colors duration-200">
+    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="flex flex-col sm:flex-row justify-between items-center mb-12 gap-4">
+            <div class="text-center sm:text-left">
+                <h1 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    JavaScript Essentials
+                </h1>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">
+                    Complete guide to JavaScript concepts for React
+                </p>
+            </div>
+            <button 
+                id="theme-toggle" 
+                class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors duration-200"
+            >
+                🌙
+            </button>
+        </header>
+
+        <div class="grid gap-6 animate-[fadeIn_1s_ease-in]">
+            <!-- Arrow Functions -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Arrow Functions</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">function DoSomething(){
+    // logic of the function
+}
+
+const DoSomething = () => {
+    // logic of the function
+} // one of the most preferred ways of writing functions
+// helps working with callbacks better</code></pre>
+            </section>
+
+            <!-- Export Functions -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Export Functions</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">export default function DoSomething(){
+    // code
+}
+
+export const MyComponent = () => {
+    // code
+} // better and clean way of writing stuff</code></pre>
+            </section>
+
+            <!-- Anonymous Functions -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Anonymous Functions</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">&lt;button onClick={() => {
+    // code of the function
+    // function without name is known as anonymous functions
+}}&gt;
+&lt;/button&gt;</code></pre>
+            </section>
+
+            <!-- Ternary Operators -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Ternary Operators</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">if(true){
+}else{
+}
+// can be reduced to
+let age = 10;
+let name = age > 10 ? "Pedro" : "Jack"; // shorthand notations
+let nameTwo = age > 10 && "Pedro" // if age is more than 10 then name is Pedro
+let nameThree = age > 10 || "Pedro" // if age is not more than 10 then name is Pedro
+let color = "green"
+let isCorrent = false
+color = isCorrect ? "green" : "red"
+
+// real life react use-case
+const Component = () => {
+    return <>
+        <div>
+            { age > 10 ? "Pedro" : "Jack" }
+        </div>
+    </>
+}</code></pre>
+            </section>
+
+            <!-- Objects -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Objects (Most useful Data Structure aka. HashMap, Hash Tables, Dictionaries)</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">const person = {
+    name: "Pedro",
+    age: 20,
+    isMarried: false,
+};
+
+const { name, age, isMarried } = person; // we use this a lot when working with properties
+
+const name = "Pedro"
+const person = {
+    name,
+    age: 20,
+    isMarried: false,
+}; // another shorthand notation
+
+const person2 = {
+    ...person,
+    name: "Jack", // spread operator
+};
+
+const names = ["Pedro", "Jack", "Jessica"];
+const namesTwo = [...names, "Joe"]; // spread operator</code></pre>
+            </section>
+
+            <!-- Array Functions -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Array Functions</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">let names = ["Pedro", "Jessica", "Carol", "Pedro", "Pedro"]
+.map() 
+.filter()
+
+names.map(name => {
+    return &lt;h1&gt;{name}&lt;/h1&gt;
+}); // use of map in react
+
+names.filter(name => {
+    return name != "Pedro";
+}); // tells which things to keep or which to reject</code></pre>
+            </section>
+
+            <!-- Async, Await, Fetch -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Async, Await, Fetch</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">// Promises
+console.log("Hello");
+let name = "Pedro";
+let firstName = "John";
+let listOfMovies = fetch("url.com/movies");
+console.log(listOfMovies); // you might have called it before fetching
+
+const event = new Promise((resolve, reject) => {
+    let name = "Pedro";
+    name == "Pedro" ? resolve(name) : reject("Name was not Pedro");
+})
+
+event.then(name => {
+    // in case we resolve will give us name
+}).catch(err => {
+    // in case of reject will get the err
+}).finally(() => {
+    // always be called no matter what happens
+});
+
+const axios = require("axios");
+const data = axios.get("https://cat-fact.herokuapp.com/facts"); 
+// npm install axios
+data.then((res) => {
+    console.log(res.data);
+}).catch((err) => {
+    console.log(err);
+}).finally(() => {
+    console.log("Promise was resolved successfully");
+});
+
+// Async Await is just a Syntactical Sugar
+// removes the need for axios
+// to await for something we need to have it inside the asynchronous functions
+const fetchData = async () => {
+    try {
+        const data = await fetch("https://cat-fact.herokuapp.com/facts");
+        console.log(data);
+    } catch(err) {
+        console.log(err);
+    } finally {
+        console.log("Hello");
+    }
+}</code></pre>
+            </section>
+
+            <!-- DOM -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">DOM</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">// Document Object Model : representation of the webpage that our JS can interact with
+// JS is used to add interactivity to our pages
+// No need to learn DOM Functions they were the reason why we create React</code></pre>
+            </section>
+
+            <!-- Import Export -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Import Export Notations</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">const axios = require('axios') // in JS
+import axios from "axios" // import notations
+
+export { anObject }
+export default () {}
+export const name = () => {}
+module.exports = { anObjectOfWhatYouWannaSendOver }; // in JS</code></pre>
+            </section>
+
+            <!-- Optional Chains -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Optional Chains</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">const fetchData = async () => {
+    const data = await fetch("imaginapi.com");
+    const name = data.person?.name; // only tries to access person if it exists
+};</code></pre>
+            </section>
+
+            <!-- Template Literals -->
+            <section class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <h2 class="text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-4">Template Literals</h2>
+                <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">const fetchData = async (animalName) => {
+    const data = await fetch(`imaginapi.com/searchTerm=${animalName}`);
+};</code></pre>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const icon = themeToggleButton;
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            icon.textContent = '☀️';
+        } else {
+            document.documentElement.classList.remove('dark');
+            icon.textContent = '🌙';
+        }
+
+        themeToggleButton.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+                icon.textContent = '☀️';
+            } else {
+                localStorage.theme = 'light';
+                icon.textContent = '🌙';
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+</html>
